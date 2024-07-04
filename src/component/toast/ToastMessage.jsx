@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 const ToastMessage = ({ message, userName, userImage, onClose }) => {
+  const duration = 3000; // Constant duration for auto-close in milliseconds
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      onClose();
+    }, duration);
+    return () => clearTimeout(timer); // Clear the timeout if the component unmounts
+  }, [onClose]);
   return (
     <div
       id="toast-message-cta"
-      className="w-full max-w-xs p-4 text-gray-500 bg-white rounded-lg shadow dark:bg-gray-800 dark:text-gray-400 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50"
+      className="w-full max-w-xs p-4 text-gray-500 bg-green-100 rounded-lg shadow dark:bg-gray-800 dark:text-gray-400 fixed bottom-5 right-5 z-50 animate-fade-left animate-once animate-ease-in"
       role="alert"
     >
       <div className="flex">
