@@ -12,18 +12,54 @@ function Hero() {
   return (
     <Flowbite theme={{ theme: customTheme }}>
       <div className="h-56 sm:h-64 xl:h-80 2xl:h-96">
-        <Carousel
-          className="overflow-hidden h-[580px]"
-          onSlideChange={(index) => console.log("onSlideChange()", index)}
-        >
-          <div className="flex h-full items-center justify-center bg-gray-400 dark:bg-gray-700 dark:text-white bg-[url('https://img.freepik.com/free-photo/attractive-asian-woman-showing-smartphone-app-shopping-bags-buying-online-via-application-standi_1258-156867.jpg?t=st=1719750180~exp=1719753780~hmac=32fe2c8d6ba071a2003e2e36675f0f689ea9f319a99012d1ddd90964956e0c70&w=1380')] bg-cover bg-no-repeat bg-center">
-            Slide 1
+        <Carousel className="overflow-hidden h-[580px]">
+          <div className="relative flex h-full items-center justify-center bg-gray-400 dark:bg-gray-700 dark:text-white bg-[url('https://oldskool-html-bootstrap.vercel.app/assets/images/banners/banner-4.jpg')] bg-cover bg-no-repeat bg-center">
+            <div className="opacity-20 absolute top-0 left-0 right-0 bottom-0 w-full h-full bg-gradient-to-r from-cyan-500 to-blue-500"></div>
+            <div className="relative z-10">
+              <h1 className="mb-4 text-3xl font-extrabold text-white md:text-5xl lg:text-6xl">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
+                  Better Data
+                </span>{" "}
+                Scalable AI.
+              </h1>
+              <p className="text-lg font-normallg:text-xl text-white">
+                Here at Flowbite we focus on markets where technology,
+                innovation, and capital can unlock long-term value and drive
+                economic growth.
+              </p>
+            </div>
           </div>
-          <div className="flex h-full items-center justify-center bg-gray-400 dark:bg-gray-700 dark:text-white bg-[url('https://img.freepik.com/free-photo/ecommerce-online-shopping-concept-satisfied-asian-female-client-showing-thumbs-up-using-smar_1258-166202.jpg?t=st=1719750392~exp=1719753992~hmac=4b7313f5a19911fffdc7b8337f55902089b99d27b1daf51d889daa1b025e864f&w=1380')] bg-cover bg-no-repeat bg-center">
-            Slide 2
+          <div className="relative flex h-full items-center justify-center bg-gray-400 dark:bg-gray-700 dark:text-white bg-[url('https://oldskool-html-bootstrap.vercel.app/assets/images/banners/banner-3.jpg')] bg-cover bg-no-repeat bg-center">
+            <div className="opacity-30 absolute top-0 left-0 right-0 bottom-0 w-full h-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"></div>
+            <div className="relative z-10">
+              <h1 className="mb-4 text-3xl font-extrabold text-white md:text-5xl lg:text-6xl">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r to-[#c8ffb4] from-sky-400">
+                  Better Data
+                </span>{" "}
+                Scalable AI.
+              </h1>
+              <p className="text-lg font-normallg:text-xl text-white">
+                Here at Flowbite we focus on markets where technology,
+                innovation, and capital can unlock long-term value and drive
+                economic growth.
+              </p>
+            </div>
           </div>
-          <div className="flex h-full items-center justify-center bg-gray-400 dark:bg-gray-700 dark:text-white bg-[url('https://img.freepik.com/free-photo/side-view-woman-shopping-online-with-smartphone-cyber-monday-with-copy-space_23-2148657653.jpg?t=st=1719750257~exp=1719753857~hmac=195fd918a51eafa16ee93a6ed0f7e702f4af4069d650718246a02db0cc264b4b&w=1380')] bg-cover bg-no-repeat bg-center">
-            Slide 3
+          <div className="relative flex h-full items-center justify-center bg-gray-400 dark:bg-gray-700 dark:text-white bg-[url('https://oldskool-html-bootstrap.vercel.app/assets/images/banners/banner-2.jpg')] bg-cover bg-no-repeat bg-center">
+            <div className="opacity-30 absolute top-0 left-0 right-0 bottom-0 w-full h-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"></div>
+            <div className="relative z-10">
+              <h1 className="mb-4 text-3xl font-extrabold text-white md:text-5xl lg:text-6xl">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r to-[#c8ffb4] from-sky-400">
+                  Better Data
+                </span>{" "}
+                Scalable AI.
+              </h1>
+              <p className="text-lg font-normallg:text-xl text-white">
+                Here at Flowbite we focus on markets where technology,
+                innovation, and capital can unlock long-term value and drive
+                economic growth.
+              </p>
+            </div>
           </div>
         </Carousel>
       </div>

@@ -11,7 +11,7 @@ import {
 } from "@nextui-org/react";
 import { AcmeLogo } from "../small/AcmeLogo";
 
-function Nav({ onOpen }) {
+function  Nav({ onOpen }) {
   const menuItems = [
     "Profile",
     "Dashboard",
