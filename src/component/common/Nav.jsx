@@ -8,10 +8,16 @@ import {
   NavbarItem,
   Link,
   Button,
+  DropdownMenu,
+  Dropdown,
+  DropdownTrigger,
+  Avatar,
+  DropdownItem,
 } from "@nextui-org/react";
 import { AcmeLogo } from "../small/AcmeLogo";
 
-function  Nav({ onOpen }) {
+function Nav({ onOpen, userDetails, openModal, modals }) {
+  console.log(userDetails.userName);
   const menuItems = [
     "Profile",
     "Dashboard",
@@ -25,7 +31,7 @@ function  Nav({ onOpen }) {
     "Log Out",
   ];
   return (
-    <Navbar maxWidth="2xl" disableAnimation isBordered>
+    <Navbar maxWidth="2xl" isBordered>
       <NavbarContent className="sm:hidden" justify="start">
         <NavbarMenuToggle />
       </NavbarContent>
@@ -60,14 +66,39 @@ function  Nav({ onOpen }) {
       </NavbarContent>
 
       <NavbarContent justify="end">
-        <NavbarItem className="hidden lg:flex">
-          <Button onPress={onOpen}>Login</Button>
-        </NavbarItem>
-        <NavbarItem>
-          <Button as={Link} color="warning" href="#" variant="flat">
-            Sign Up
-          </Button>
-        </NavbarItem>
+        {userDetails.userName ? (
+          <NavbarItem>
+            <Dropdown placement="bottom-end">
+              <DropdownTrigger>
+                <Avatar
+                  isBordered
+                  as="button"
+                  className="transition-transform"
+                  color="secondary"
+                  name={userDetails.userName}
+                  size="sm"
+                  src={userDetails.imageUrl}
+                />
+              </DropdownTrigger>
+              <DropdownMenu aria-label="Profile Actions" variant="flat">
+                <DropdownItem key="profile" className="h-14 gap-2">
+                  <p className="font-semibold">Signed in as</p>
+                  <p className="font-semibold">{userDetails.userName}</p>
+                </DropdownItem>
+                <DropdownItem key="settings">My Settings</DropdownItem>
+                <DropdownItem key="logout" color="danger">
+                  Log Out
+                </DropdownItem>
+              </DropdownMenu>
+            </Dropdown>
+          </NavbarItem>
+        ) : (
+          <>
+            <NavbarItem className="hidden lg:flex">
+              <Button onPress={() => openModal("loginModal")}>Login</Button>
+            </NavbarItem>
+          </>
+        )}
       </NavbarContent>
 
       <NavbarMenu>

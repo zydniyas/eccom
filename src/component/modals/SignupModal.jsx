@@ -17,47 +17,37 @@ import { useState } from "react";
 import axios from "axios";
 import ToastMessage from "../toast/ToastMessage";
 
-function LogInModal({
-  openModal,
-  closeModal,
+function SignupModal({
   modals,
-  onOpen,
+  closeModal,
   isOpen,
   onOpenChange,
-  handleLogin,
-  username,
-  setUsername,
-  setPassword,
-  password,
   showToast,
   setShowToast,
-  userDetails,
 }) {
   return (
     <>
       <Modal
-        isOpen={modals.loginModal}
-        onOpenChange={() => closeModal("loginModal")}
+        isOpen={modals.signUpModal}
+        onOpenChange={() => closeModal("signUpModal")}
         placement="top-center"
       >
         <ModalContent>
           {(onClose) => (
             <>
-              <ModalHeader className="flex flex-col gap-1">Log in</ModalHeader>
-              <form onSubmit={handleLogin}>
+              <ModalHeader className="flex flex-col gap-1">Sign up</ModalHeader>
+              <form>
                 <ModalBody>
                   <Input
-                    autoComplete="username"
+                    autoComplete="firstName"
                     style={{ border: "none" }}
                     autoFocus
                     endContent={
                       <MailIcon className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />
                     }
-                    label="Username"
-                    placeholder="Enter your username"
+                    label="firstName"
+                    placeholder="Enter your firstName"
                     variant="bordered"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
                   />
                   <Input
                     autoComplete="current-password"
@@ -69,8 +59,6 @@ function LogInModal({
                     placeholder="Enter your password"
                     type="password"
                     variant="bordered"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
                   />
                   <div className="flex py-2 px-1 justify-between items-start">
                     <Checkbox
@@ -82,7 +70,6 @@ function LogInModal({
                     </Checkbox>
                     <div className="text-right">
                       <Link
-                        onPress={() => openModal("signUpModal")}
                         className="text-right"
                         color="primary"
                         href="#"
@@ -105,7 +92,7 @@ function LogInModal({
                   <Button
                     color="danger"
                     variant="flat"
-                    onPress={() => closeModal("loginModal")}
+                    onPress={() => closeModal("signUpModal")}
                   >
                     Close
                   </Button>
@@ -120,9 +107,7 @@ function LogInModal({
       </Modal>
       {showToast && (
         <ToastMessage
-          message={`Hi ${userDetails.userName}, thanks for Log In.`}
-          userName={userDetails.userName}
-          userImage={userDetails.imageUrl}
+          message={`Account Created Please Log In.`}
           onClose={() => setShowToast(false)}
         />
       )}
@@ -130,4 +115,4 @@ function LogInModal({
   );
 }
 
-export default LogInModal;
+export default SignupModal;
